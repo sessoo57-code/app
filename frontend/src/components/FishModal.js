@@ -86,17 +86,19 @@ const FishModal = ({ fish, isOpen, onClose }) => {
           </button>
 
           <div className="aspect-[21/9] bg-gradient-to-br from-teal-50 via-blue-50 to-cyan-50 flex items-center justify-center overflow-hidden rounded-t-3xl relative">
-            {!imageLoaded && (
+            {(!imageLoaded || imageLoading) && (
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex flex-col items-center">
                   <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-teal-600 mb-4"></div>
-                  <p className="text-teal-700 text-lg">Caricamento foto...</p>
+                  <p className="text-teal-700 text-lg">
+                    {imageLoading ? 'Caricamento da Wikipedia...' : 'Caricamento foto...'}
+                  </p>
                 </div>
               </div>
             )}
-            {fish.immagine && !imageError ? (
+            {imageUrl && !imageError ? (
               <img
-                src={fish.immagine}
+                src={imageUrl}
                 alt={fish.nome}
                 className={`w-full h-full object-cover transition-opacity duration-500 ${
                   imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -109,7 +111,9 @@ const FishModal = ({ fish, isOpen, onClose }) => {
                 <svg className="w-24 h-24 mb-4 opacity-50" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
                 </svg>
-                <span className="text-xl">Nessuna immagine disponibile</span>
+                <span className="text-xl">
+                  {imageLoading ? 'Ricerca su Wikipedia...' : 'Nessuna immagine disponibile'}
+                </span>
               </div>
             )}
             
