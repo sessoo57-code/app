@@ -1,34 +1,123 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Custom animations */
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+.animate-scale {
+  animation: scale 0.2s ease-out;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.App-link {
-    color: #61dafb;
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+::-webkit-scrollbar-thumb {
+  background: #0f766e;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #134e4a;
+}
+
+/* Smooth focus transitions */
+.focus\:ring-4:focus {
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+/* Glass morphism effect for header */
+.backdrop-blur-xl {
+  backdrop-filter: blur(16px);
+}
+
+/* Custom select arrow */
+select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%230f766e' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+/* Ensure images don't overflow on mobile */
+@media (max-width: 640px) {
+  .aspect-\[4\/3\] img {
+    object-position: center;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-gradient-to-br {
+    background: white;
+  }
+  
+  .border-teal-100 {
+    border-color: #000;
+  }
+  
+  .text-teal-900 {
+    color: #000;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .transition-all,
+  .transition-transform,
+  .transition-opacity,
+  .transition-colors {
+    transition: none;
+  }
+  
+  .animate-spin,
+  .animate-scale {
+    animation: none;
+  }
+  
+  .hover\:scale-110:hover,
+  .hover\:scale-\[1\.02\]:hover,
+  .hover\:-translate-y-2:hover {
+    transform: none;
+  }
+}
+
+/* Focus visible for better accessibility */
+.focus\:outline-none:focus-visible {
+  outline: 2px solid #0f766e;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .sticky,
+  .fixed {
+    position: static;
+  }
+  
+  .backdrop-blur-xl,
+  .backdrop-blur-sm {
+    backdrop-filter: none;
+  }
+  
+  .shadow-lg,
+  .shadow-2xl {
+    box-shadow: none;
+  }
 }
