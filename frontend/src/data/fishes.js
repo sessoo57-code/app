@@ -1,0 +1,222 @@
+export const FISHES = [
+  {
+    "id": "fish-001",
+    "nome": "Spigola",
+    "scientifico": "Dicentrarchus labrax",
+    "famiglia": "Moronidae",
+    "habitat": "Acque costiere e lagune",
+    "caratteristiche": "Predatore costiero, attivo con mare mosso.",
+    "mesi_pesca": "Ottobre–Marzo",
+    "esche": "Vivi (cefali), siliconi, minnow",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/3/35/Dicentrarchus_labrax.jpg"
+  },
+  {
+    "id": "fish-002",
+    "nome": "Orata",
+    "scientifico": "Sparus aurata",
+    "famiglia": "Sparidae",
+    "habitat": "Fondali sabbiosi e praterie di Posidonia",
+    "caratteristiche": "Barra dorata sulla fronte, carni pregiate.",
+    "mesi_pesca": "Settembre–Novembre",
+    "esche": "Granchi, cozze, bibi, americano",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Sparus_aurata.jpg"
+  },
+  {
+    "id": "fish-003",
+    "nome": "Sarago maggiore",
+    "scientifico": "Diplodus sargus",
+    "famiglia": "Sparidae",
+    "habitat": "Scogliere, praterie, porti",
+    "caratteristiche": "Gregario, sospettoso.",
+    "mesi_pesca": "Aprile–Ottobre",
+    "esche": "Gamberetti, cozze, bigattini",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/f/fc/Diplodus_sargus_sargus_2_by_Daniel_Vila.jpg"
+  },
+  {
+    "id": "fish-004",
+    "nome": "Cernia bruna",
+    "scientifico": "Epinephelus marginatus",
+    "famiglia": "Serranidae",
+    "habitat": "Fondali rocciosi profondi",
+    "caratteristiche": "Sedentaria e longeva, grandi dimensioni.",
+    "mesi_pesca": "Giugno–Settembre",
+    "esche": "Pesci vivi, calamari, jig",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Merou_Brun_-_Epinephelus_marginatus.jpg"
+  },
+  {
+    "id": "fish-005",
+    "nome": "Triglia di scoglio",
+    "scientifico": "Mullus surmuletus",
+    "famiglia": "Mullidae",
+    "habitat": "Sabbioso/fangoso, praterie",
+    "caratteristiche": "Baffi sensoriali per scavare.",
+    "mesi_pesca": "Aprile–Ottobre",
+    "esche": "Arenicola, coreano, piccole esche",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/3/38/Mullus_surmuletus_Spain.jpg"
+  },
+  {
+    "id": "fish-006",
+    "nome": "Tonno rosso",
+    "scientifico": "Thunnus thynnus",
+    "famiglia": "Scombridae",
+    "habitat": "Pelagico, mare aperto",
+    "caratteristiche": "Grande migratore, potente.",
+    "mesi_pesca": "Maggio–Settembre",
+    "esche": "Popper, jig, traina",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Thunnus_thynnus2.jpg"
+  },
+  {
+    "id": "fish-007",
+    "nome": "Pesce San Pietro",
+    "scientifico": "Zeus faber",
+    "famiglia": "Zeidae",
+    "habitat": "Fondali fangosi e sabbiosi",
+    "caratteristiche": "Macchia scura laterale tipica.",
+    "mesi_pesca": "Gennaio–Aprile",
+    "esche": "Totani, sardine, jig lenti",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/2/27/Zeus_faber_Linnaeus%2C_1758.jpg"
+  },
+  {
+    "id": "fish-008",
+    "nome": "Ricciola",
+    "scientifico": "Seriola dumerili",
+    "famiglia": "Carangidae",
+    "habitat": "Acque costiere e mare aperto",
+    "caratteristiche": "Predatore pelagico in branchi.",
+    "mesi_pesca": "Giugno–Ottobre",
+    "esche": "Vivi, popper, stickbait",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Seriola_dumerili.jpg"
+  },
+  {
+    "id": "fish-009",
+    "nome": "Barracuda mediterraneo",
+    "scientifico": "Sphyraena viridensis",
+    "famiglia": "Sphyraenidae",
+    "habitat": "Coste rocciose e porti",
+    "caratteristiche": "Caccia al crepuscolo.",
+    "mesi_pesca": "Maggio–Ottobre",
+    "esche": "Long jerk, esche snelle",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Sphyraena_viridensis_01.JPG"
+  },
+  {
+    "id": "fish-010",
+    "nome": "Pagello fragolino",
+    "scientifico": "Pagellus erythrinus",
+    "famiglia": "Sparidae",
+    "habitat": "Fondi sabbiosi/fangosi",
+    "caratteristiche": "Carni pregiate.",
+    "mesi_pesca": "Aprile–Giugno",
+    "esche": "Arenicola, americano",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Pagellus_erythrinus01.jpg"
+  },
+  {
+    "id": "fish-011",
+    "nome": "Dentice",
+    "scientifico": "Dentex dentex",
+    "famiglia": "Sparidae",
+    "habitat": "Secche rocciose, cigli",
+    "caratteristiche": "Predatore solitario.",
+    "mesi_pesca": "Maggio–Settembre",
+    "esche": "Vivi (seppie, cefali), inchiku",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Dentex_dentex_SI2.jpg"
+  },
+  {
+    "id": "fish-012",
+    "nome": "Lampuga",
+    "scientifico": "Coryphaena hippurus",
+    "famiglia": "Coryphaenidae",
+    "habitat": "Pelagico, oggetti galleggianti",
+    "caratteristiche": "Colorazioni vivaci.",
+    "mesi_pesca": "Agosto–Ottobre",
+    "esche": "Popper, jig, trolling feather",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Coryphaena_hippurus_-_NOAA.jpg"
+  },
+  {
+    "id": "fish-013",
+    "nome": "Sugarello",
+    "scientifico": "Trachurus trachurus",
+    "famiglia": "Carangidae",
+    "habitat": "Pelagico costiero",
+    "caratteristiche": "Branchi numerosi.",
+    "mesi_pesca": "Aprile–Ottobre",
+    "esche": "Sabiki, piccoli metal jig",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Trachurus_trachurus.jpg"
+  },
+  {
+    "id": "fish-014",
+    "nome": "Sgombro",
+    "scientifico": "Scomber scombrus",
+    "famiglia": "Scombridae",
+    "habitat": "Pelagico, acque aperte",
+    "caratteristiche": "Velocissimo.",
+    "mesi_pesca": "Marzo–Giugno",
+    "esche": "Sabiki, traina leggera",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/a/a5/Scomber_scombrus_2.jpg"
+  },
+  {
+    "id": "fish-015",
+    "nome": "Sardina",
+    "scientifico": "Sardina pilchardus",
+    "famiglia": "Clupeidae",
+    "habitat": "Branchi costieri",
+    "caratteristiche": "Prede di molti predatori.",
+    "mesi_pesca": "Autunno–Inverno",
+    "esche": "Light game, reti",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Sardina_pilchardus_Sardine.jpg"
+  },
+  {
+    "id": "fish-016",
+    "nome": "Alice (Acciuga)",
+    "scientifico": "Engraulis encrasicolus",
+    "famiglia": "Engraulidae",
+    "habitat": "Pelagico costiero",
+    "caratteristiche": "Bocca ampia, preda comune.",
+    "mesi_pesca": "Primavera–Estate",
+    "esche": "Micro-jigs, piccole totanare",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Engraulis_encrasicolus_Sardegna.jpg"
+  },
+  {
+    "id": "fish-017",
+    "nome": "Pesce serra",
+    "scientifico": "Pomatomus saltatrix",
+    "famiglia": "Pomatomidae",
+    "habitat": "Foci, spiagge, porti",
+    "caratteristiche": "Denti taglienti, predatore notturno.",
+    "mesi_pesca": "Maggio–Ottobre",
+    "esche": "WTD, popper, long jerk",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Pomatomus_saltatrix1.jpg"
+  },
+  {
+    "id": "fish-018",
+    "nome": "Aguglia",
+    "scientifico": "Belone belone",
+    "famiglia": "Belonidae",
+    "habitat": "Superficie, coste sabbiose",
+    "caratteristiche": "Becco allungato.",
+    "mesi_pesca": "Maggio–Ottobre",
+    "esche": "Aghi, siliconi sottili, mosca",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Belone_belone_by_OpenCage.jpg"
+  },
+  {
+    "id": "fish-019",
+    "nome": "Cefalo (Muggine)",
+    "scientifico": "Mugil cephalus",
+    "famiglia": "Mugilidae",
+    "habitat": "Lagune, porti, foci",
+    "caratteristiche": "Onnivoro, sospettoso.",
+    "mesi_pesca": "Tutto l'anno",
+    "esche": "Pane, bigattini, pasta",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Mugil_cephalus_by_OpenCage.jpg"
+  },
+  {
+    "id": "fish-020",
+    "nome": "Leccia",
+    "scientifico": "Lichia amia",
+    "famiglia": "Carangidae",
+    "habitat": "Spiagge, foci, canaloni",
+    "caratteristiche": "Caccia rapida su banchi.",
+    "mesi_pesca": "Giugno–Ottobre",
+    "esche": "WTD, stickbait, vivi",
+    "immagine": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Lichia_amia_Trieste.jpg"
+  }
+];
