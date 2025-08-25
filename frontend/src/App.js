@@ -9,6 +9,7 @@ const App = () => {
   const [selectedFamily, setSelectedFamily] = useState('');
   const [selectedFish, setSelectedFish] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [sortBy, setSortBy] = useState('alfabetico');
 
   // Get unique families
   const families = useMemo(() => {
