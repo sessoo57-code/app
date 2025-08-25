@@ -101,7 +101,7 @@ const App = () => {
             <p className="text-teal-100 text-lg font-medium">Mediterraneo • 50+ specie</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 max-w-4xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 max-w-5xl mx-auto">
             <div className="flex-1">
               <input
                 type="text"
@@ -111,7 +111,7 @@ const App = () => {
                 className="w-full px-4 py-3 rounded-2xl border-2 border-white/20 bg-white/95 text-teal-900 placeholder-teal-600 focus:outline-none focus:ring-4 focus:ring-white/30 focus:border-white/40 transition-all duration-200 text-base font-medium backdrop-blur-sm"
               />
             </div>
-            <div className="sm:w-64">
+            <div className="sm:w-56">
               <select
                 value={selectedFamily}
                 onChange={(e) => setSelectedFamily(e.target.value)}
@@ -121,6 +121,19 @@ const App = () => {
                 {families.map(family => (
                   <option key={family} value={family}>{family}</option>
                 ))}
+              </select>
+            </div>
+            <div className="sm:w-48">
+              <select
+                value={sortBy}
+                onChange={(e) => setSortBy(e.target.value)}
+                className="w-full px-4 py-3 rounded-2xl border-2 border-white/20 bg-white/95 text-teal-900 focus:outline-none focus:ring-4 focus:ring-white/30 focus:border-white/40 transition-all duration-200 text-base font-medium backdrop-blur-sm appearance-none cursor-pointer"
+              >
+                <option value="alfabetico">🔤 Alfabetico</option>
+                <option value="famiglia">👥 Famiglia</option>
+                <option value="mesi">📅 Stagione</option>
+                <option value="difficolta">🎯 Difficoltà</option>
+                <option value="taglia">📏 Taglia</option>
               </select>
             </div>
           </div>
