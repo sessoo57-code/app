@@ -47,14 +47,14 @@ const FishCard = ({ fish, onClick }) => {
       onClick={() => onClick(fish)}
     >
       <div className="aspect-[4/3] bg-gradient-to-br from-teal-50 via-blue-50 to-cyan-50 flex items-center justify-center overflow-hidden relative">
-        {!imageLoaded && (
+        {(!imageLoaded || imageLoading) && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600"></div>
           </div>
         )}
-        {fish.immagine && !imageError ? (
+        {imageUrl && !imageError ? (
           <img
-            src={fish.immagine}
+            src={imageUrl}
             alt={fish.nome}
             className={`w-full h-full object-cover transition-all duration-500 ${
               imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -67,7 +67,9 @@ const FishCard = ({ fish, onClick }) => {
             <svg className="w-12 h-12 mb-2 opacity-50" fill="currentColor" viewBox="0 0 20 20">
               <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" />
             </svg>
-            <span className="text-sm text-center">Nessuna immagine</span>
+            <span className="text-sm text-center">
+              {imageLoading ? 'Caricamento...' : 'Nessuna immagine'}
+            </span>
           </div>
         )}
         
