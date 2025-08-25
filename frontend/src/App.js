@@ -17,10 +17,11 @@ const App = () => {
     return uniqueFamilies.sort((a, b) => a.localeCompare(b));
   }, []);
 
-  // Filter fishes based on search term and family
-  const filteredFishes = useMemo(() => {
+  // Filter and sort fishes based on search term, family, and sort option
+  const filteredAndSortedFishes = useMemo(() => {
     let filtered = FISHES;
 
+    // Apply filters
     if (searchTerm) {
       const search = searchTerm.toLowerCase();
       filtered = filtered.filter(fish =>
@@ -35,8 +36,47 @@ const App = () => {
       filtered = filtered.filter(fish => fish.famiglia === selectedFamily);
     }
 
-    return filtered;
-  }, [searchTerm, selectedFamily]);
+    // Apply sorting
+    const sorted = [...filtered].sort((a, b) => {
+      switch (sortBy) {
+        case 'alfabetico':
+          return a.nome.localeCompare(b.nome);
+        case 'famiglia':
+          if (a.famiglia !== b.famiglia) {
+            return a.famiglia.localeCompare(b.famiglia);
+          }
+          return a.nome.localeCompare(b.nome);
+        case 'mesi':
+          // Sort by best months if available, otherwise by general months
+          const monthsA = a.mesi_migliori || a.mesi_pesca || '';
+          const monthsB = b.mesi_migliori || b.mesi_pesca || '';
+          if (monthsA !== monthsB) {
+            return monthsA.localeCompare(monthsB);
+          }
+          return a.nome.localeCompare(b.nome);
+        case 'difficolta':
+          const difficultyOrder = ['bassa', 'media', 'media-alta', 'alta', 'molto alta'];
+          const indexA = difficultyOrder.indexOf(a.difficolta?.toLowerCase() || '');
+          const indexB = difficultyOrder.indexOf(b.difficolta?.toLowerCase() || '');
+          if (indexA !== indexB) {
+            return indexA - indexB;
+          }
+          return a.nome.localeCompare(b.nome);
+        case 'taglia':
+          // Extract numeric value from taglia_media for sorting
+          const sizeA = parseFloat(a.taglia_media?.match(/\d+/) || 0);
+          const sizeB = parseFloat(b.taglia_media?.match(/\d+/) || 0);
+          if (sizeA !== sizeB) {
+            return sizeB - sizeA; // Larger fish first
+          }
+          return a.nome.localeCompare(b.nome);
+        default:
+          return a.nome.localeCompare(b.nome);
+      }
+    });
+
+    return sorted;
+  }, [searchTerm, selectedFamily, sortBy]);
 
   const handleFishClick = (fish) => {
     setSelectedFish(fish);
