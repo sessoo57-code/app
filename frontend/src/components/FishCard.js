@@ -1,8 +1,16 @@
 import React, { useState } from 'react';
+import useWikipediaImage from '../hooks/useWikipediaImage';
 
 const FishCard = ({ fish, onClick }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
+  
+  // Use Wikipedia image hook
+  const { imageUrl, loading: imageLoading } = useWikipediaImage(
+    fish.scientifico, 
+    fish.nome, 
+    fish.immagine
+  );
 
   const handleImageLoad = () => {
     setImageLoaded(true);
