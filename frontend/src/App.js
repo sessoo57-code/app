@@ -132,17 +132,22 @@ const App = () => {
         {/* Results count */}
         <div className="mb-6">
           <p className="text-teal-700 text-lg font-medium">
-            {filteredFishes.length === FISHES.length 
+            {filteredAndSortedFishes.length === FISHES.length 
               ? `Mostrando tutte le ${FISHES.length} specie`
-              : `Trovate ${filteredFishes.length} specie su ${FISHES.length}`
+              : `Trovate ${filteredAndSortedFishes.length} specie su ${FISHES.length}`
             }
+            {sortBy !== 'alfabetico' && (
+              <span className="text-teal-600 text-sm ml-2">
+                • Ordinate per {sortBy === 'famiglia' ? 'famiglia' : sortBy === 'mesi' ? 'stagione' : sortBy === 'difficolta' ? 'difficoltà' : 'taglia'}
+              </span>
+            )}
           </p>
         </div>
 
         {/* Fish Grid */}
-        {filteredFishes.length > 0 ? (
+        {filteredAndSortedFishes.length > 0 ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {filteredFishes.map(fish => (
+            {filteredAndSortedFishes.map(fish => (
               <FishCard
                 key={fish.id}
                 fish={fish}
